@@ -58,6 +58,12 @@
       {
         "aria-allowed-attr": "off"
       }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "marquee": "off"
+      }
     ]
   }
 }
