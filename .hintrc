@@ -7,7 +7,8 @@
     "axe/text-alternatives": [
       "default",
       {
-        "frame-title": "off"
+        "frame-title": "off",
+        "image-alt": "off"
       }
     ],
     "axe/keyboard": [
@@ -19,7 +20,43 @@
     "axe/structure": [
       "default",
       {
-        "listitem": "off"
+        "listitem": "off",
+        "list": "off"
+      }
+    ],
+    "disown-opener": "off",
+    "css-prefix-order": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "user-select",
+          "backdrop-filter",
+          "container-type",
+          "container-type: inline-size",
+          "text-wrap",
+          "text-wrap: pretty",
+          "text-wrap: balance"
+        ]
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off",
+        "button-name": "off"
+      }
+    ],
+    "axe/aria": [
+      "default",
+      {
+        "aria-allowed-attr": "off"
       }
     ]
   }

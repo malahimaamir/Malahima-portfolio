@@ -1,0 +1,22 @@
+{
+  "name": "malahima-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malahimaamir/Malahima-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malahimaamir/Malahima-portfolio/issues"
+  },
+  "homepage": "https://github.com/malahimaamir/Malahima-portfolio#readme",
+  "dependencies": {
+    "mdb-ui-kit": "^8.0.0"
+  }
+}
