@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- ***********************nav******************* -->
+    <div class="page-wrapper">
+        <div class="nav-wrapper">
+            <div class="grad-bar"></div>
+            <nav class="navbar">
+                <img  src="./Screenshot_2024-11-01_092051-removebg-preview.png"
+                    alt="Company Logo">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav no-search">
+                    <li class="nav-item"><a href="./index.html">Home</a></li>
+                    <li class="nav-item"><a href="./about.html">About</a></li>
+                    <li class="nav-item"><a href="./services.html">services</a></li>
+                    <li class="nav-item"><a href="./index.html#portfolio">project</a></li>
+                    <li class="nav-item"><a href="./index.html#contact">Contact Us</a></li>
+                    <i class="fas fa-search" id="search-icon"></i>
+                    <input class="search-input" type="text" placeholder="Search..">
+                </ul>
+            </nav>
+        </div>
+        </section>
+        </section>
+    </div>
+
+    <!-- ****************************slider********************* -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="content" data-content="one">
+            <h1>Hallstatt, Austria</h1>
+            <p>
+              Visit Hallstatt, Austria, a beautiful village by a clear lake,
+              surrounded by tall mountains. Walk through old streets, see
+              ancient salt mines, and enjoy the peaceful views. This tour is
+              perfect for nature lovers and history fans.
+            </p>
+          </div>
+          <div class="background" data-item="one"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="content" data-content="two">
+            <h1>Paris, France</h1>
+            <p>
+              Explore Paris, the City of Light, known for its romance and famous
+              landmarks like the Eiffel Tower. Enjoy delicious food, visit the
+              Louvre, and stroll along the Seine River. Choose this tour to
+              experience the charm and culture of France.
+            </p>
+          </div>
+          <div class="background" data-item="two"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="content" data-content="three">
+            <h1>Amsterdam, Netherlands</h1>
+            <p>
+              Discover Amsterdam, a city full of canals, bicycles, and culture.
+              Visit the Van Gogh Museum, take a canal cruise, and explore lively
+              streets. This tour is great for those who love art, history, and a
+              vibrant city atmosphere.
+            </p>
+          </div>
+          <div class="background" data-item="three"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="content" data-content="four">
+            <h1>Kyoto, Japan</h1>
+            <p>
+              Travel to Kyoto, Japan, a city rich in tradition and beauty. Visit
+              ancient temples, enjoy beautiful gardens, and see colorful geisha
+              districts. This tour is perfect for those who want to experience
+              Japan's history and culture.
+            </p>
+          </div>
+          <div class="background" data-item="four"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="content" data-content="five">
+            <h1>New York, USA</h1>
+            <p>
+              Experience New York City, where excitement and adventure await at
+              every corner. See the Statue of Liberty, enjoy a Broadway show,
+              and taste food from around the world. This tour is ideal for those
+              who want to feel the energy of a big city.
+            </p>
+          </div>
+          <div class="background" data-item="five"></div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+   
+    <style>
+
+        /*****************************slider*******************************/
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Salsa&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #232328;
+  font-family: "Quicksand", sans-serif;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* content */
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 14%;
+  left: 3%;
+  width: 40%;
+  height: max-content;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.content h1 {
+  font-family: "Salsa", cursive;
+  font-size: clamp(2rem, 3vw, 6rem);
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.content p {
+  font-family: inherit;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 500;
+  opacity: 0;
+}
+
+.swiper-slide-active .content {
+  opacity: 1;
+}
+
+.swiper-slide-active .content h1 {
+  animation: moveDown 0.8s ease-in forwards;
+}
+
+.swiper-slide-active .content p {
+  animation: moveDown 1s ease-in forwards;
+  animation-delay: 1s;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* background */
+
+.background[data-item="one"] {
+  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/dd28eb02-d6b1-401e-bc10-aead024e9ebf);
+  background-size: cover;
+  background-position: 50% 40%;
+}
+
+.background[data-item="two"] {
+  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/fc70e01c-17f9-4e74-a967-f039285524c5);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.background[data-item="three"] {
+  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4e3edcf1-1b68-408f-87e2-ee9fd477bf87);
+  background-size: cover;
+  background-position: 50% 40%;
+}
+
+.background[data-item="four"] {
+  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/b772933f-6340-4c95-8d06-d809c4c9b739);
+  background-size: cover;
+  background-position: 50% 60%;
+}
+
+.background[data-item="five"] {
+  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9f0fab6b-c28d-47e9-80f0-868e00562c3f);
+  background-size: cover;
+  background-position: 50% 40%;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(5%);
+  filter: brightness(90%);
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+
+.animation {
+  animation: resizeClipPath 3s ease-in-out forwards;
+}
+
+@keyframes resizeClipPath {
+  0% {
+    clip-path: circle(5%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(71%);
+    opacity: 1;
+  }
+}
+
+/* pagination bullet */
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #a3a6a3;
+  border-radius: 50%;
+  transition: all 0.6s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  height: 32px;
+  background-image: linear-gradient(180deg, #f09819 0%, #ff512f 100%);
+  border-radius: 14px;
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  width: max-content;
+  padding: 20px;
+  color: #f2f2f2;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 2;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.feature i {
+  font-size: 1.4rem;
+}
+
+.feature p {
+  font-weight: 700;
+}
+
+.btn {
+  display: block;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  background-size: 200% auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-position: right center;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.logo {
+  position: fixed;
+  right: -20px;
+  bottom: -35px;
+  z-index: 10;
+}
+
+.logo img {
+  width: 120px;
+}
+
+@media (max-width: 890px) {
+  .logo {
+  right: -10px;
+  bottom: -20px;
+}
+  
+ .logo img {
+  width: 80px;
+  }
+}
+
+/* media queries */
+
+@media (max-width: 1200px) {
+  .content {
+    top: 18%;
+  }
+
+  .content[data-content="two"],
+  .content[data-content="three"] {
+    top: 5%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .content,
+  .content[data-content="three"] {
+    top: 55%;
+    left: 2%;
+    width: 60%;
+  }
+
+  .content[data-content="two"] {
+    top: 10%;
+  }
+
+  .content h1 {
+    margin-bottom: 14px;
+  }
+
+  .content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .feature i {
+    font-size: 1.3rem;
+  }
+
+  .feature p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 790px) {
+  .footer {
+    column-gap: 10px;
+  }
+
+  .feature i {
+    font-size: 1.1rem;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+  }
+
+  .feature small {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 660px) {
+  .content,
+  .content[data-content="two"],
+  .content[data-content="three"] {
+    top: unset;
+    left: 2%;
+    bottom: 3%;
+    width: 80%;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .background[data-item="two"] {
+    background-position: 40% 50%;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+
+  .swiper-pagination-bullet-active {
+    height: 24px;
+  }
+
+  .footer {
+    column-gap: 0;
+    left: unset;
+    bottom: unset;
+    top: 20px;
+    right: -30px;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    box-shadow: unset;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+  }
+
+  .feature,
+  hr {
+    display: none;
+  }
+}
+/**************************nav*************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+/* HEADINGS */
+
+h1,
+p {
+    color: #fff;
+    text-align: center;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    color: #000;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* BASIC SETUP */
+
+.page-wrapper {
+    width: 100%;
+    height: auto;
+}
+
+.nav-wrapper {
+    width: 100%;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.grad-bar {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: gradbar 15s ease infinite;
+    -moz-animation: gradbar 15s ease infinite;
+    animation: gradbar 15s ease infinite;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    height: 50px;
+    overflow: hidden;
+}
+
+.navbar img {
+    height: 40px;
+    width: 50%;
+    justify-self: start;
+    margin-left: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-self: end;
+
+}
+
+.nav-item a {
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+}
+
+.nav-item a:hover {
+    color: #3498db;
+}
+
+/* SECTIONS */
+
+.headline {
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1435224668334-0f82ec57b605?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.features {
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+    display: flex;
+    padding: 50px 20px;
+    justify-content: space-around;
+}
+
+.feature-container {
+    flex-basis: 30%;
+    margin-top: 10px;
+}
+
+.feature-container p {
+    color: #000;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.feature-container img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* SEARCH FUNCTION */
+
+#search-icon {
+    font-size: 0.9rem;
+    margin-top: 3px;
+    margin-left: 15px;
+    transition: color 0.3s ease-out;
+}
+
+#search-icon:hover {
+    color: #3498db;
+    cursor: pointer;
+}
+
+.search {
+    transform: translate(-35%);
+    -webkit-transform: translate(-35%);
+    transition: transform 0.7s ease-in-out;
+    color: #3498db;
+}
+
+.no-search {
+    transform: translate(0);
+    transition: transform 0.7s ease-in-out;
+}
+
+.search-input {
+    position: absolute;
+    top: -4px;
+    right: -125px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.6s ease;
+}
+
+.search-active {
+    opacity: 1;
+    z-index: 0;
+}
+
+input {
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0;
+    /* FOR SAFARI */
+    outline: 0;
+    padding: 5px;
+}
+
+/* MOBILE MENU & ANIMATION */
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #3f3f3f;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+    justify-self: end;
+    margin-right: 25px;
+    display: none;
+}
+
+.menu-toggle:hover {
+    cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* KEYFRAME ANIMATIONS */
+
+@-webkit-keyframes gradbar {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes gradbar {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes gradbar {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+/* Media Queries */
+
+/* Mobile Devices - Phones/Tablets */
+
+@media only screen and (max-width: 720px) {
+    .features {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    /* MOBILE HEADINGS */
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    /* MOBILE NAVIGATION */
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        justify-content: start;
+        top: 55px;
+        background-color: #fff;
+        width: 100%;
+        height: calc(100vh - 55px);
+        transform: translate(-101%);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .navbar li {
+        padding: 15px;
+    }
+
+    .navbar li:first-child {
+        margin-top: 50px;
+    }
+
+    .navbar li a {
+        font-size: 1rem;
+    }
+
+    .menu-toggle,
+    .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-nav {
+        transform: translate(0%) !important;
+    }
+
+    /* SECTIONS */
+
+    .headline {
+        height: 20vh;
+    }
+
+    .feature-container p {
+        margin-bottom: 25px;
+    }
+
+    .feature-container {
+        margin-top: 20px;
+    }
+
+    .feature-container:nth-child(2) {
+        order: -1;
+    }
+
+    /* SEARCH DISABLED ON MOBILE */
+
+    #search-icon {
+        display: none;
+    }
+
+    .search-input {
+        display: none;
+    }
+
+}
+  </style>
+  <script>
+    const swiper = new Swiper(".swiper-container", {
+        direction: "vertical",
+        effect: "fade",
+        speed: 1000,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        mousewheel: {
+          invert: false,
+          forceToAxis: false,
+          thresholdDelta: 50,
+          sensitivity: 1,
+        },
+        on: {
+          slideChange: function () {
+            this.slides.forEach((slide) => {
+              let background = slide.querySelector(".background");
+              if (background) {
+                background.classList.remove("animation");
+              }
+            });
+            let activeSlide = this.slides[this.activeIndex];
+            let background = activeSlide.querySelector(".background");
+            if (background) {
+              background.classList.add("animation");
+            }
+          },
+        },
+      });
+      
+  </script>
+</body>  
+</html>
